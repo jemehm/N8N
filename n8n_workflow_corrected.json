@@ -1,0 +1,67 @@
+{
+    "name": "Automated Recruitment & Marketing Bot",
+    "nodes": [
+        {
+            "parameters": {},
+            "name": "Start",
+            "type": "n8n-nodes-base.start",
+            "typeVersion": 1,
+            "position": [
+                250,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "operation": "search",
+                "query": "job postings"
+            },
+            "name": "Search Facebook Groups",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 1,
+            "position": [
+                500,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "channel": "@YourTelegramChannel",
+                "message": "New job posting: {{$node[\"Search Facebook Groups\"].json[\"data\"]}}"
+            },
+            "name": "Post to Telegram",
+            "type": "n8n-nodes-base.telegram",
+            "typeVersion": 1,
+            "position": [
+                750,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Start": {
+            "main": [
+                [
+                    {
+                        "node": "Search Facebook Groups",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Search Facebook Groups": {
+            "main": [
+                [
+                    {
+                        "node": "Post to Telegram",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "settings": {},
+    "tags": []
+}
