@@ -1,0 +1,65 @@
+{
+    "blueprints": [
+        {
+            "name": "Automated Recruitment & Marketing Bot",
+            "description": "A bot that automates job postings, candidate processing, and communication with hiring managers.",
+            "nodes": [
+                {
+                    "name": "Search Facebook Groups for Job Posts",
+                    "type": "Facebook API",
+                    "description": "Finds relevant Facebook groups based on job-related keywords."
+                },
+                {
+                    "name": "Join 5 New Facebook Groups Daily",
+                    "type": "Facebook API / Automated Script",
+                    "description": "Automatically sends requests to join 5 job-related Facebook groups every day."
+                },
+                {
+                    "name": "Scheduled Job Postings",
+                    "type": "Scheduler / Facebook API / WhatsApp API / Telegram API",
+                    "description": "Posts 3-4 job listings per day in 5 predefined Facebook groups, the user's Telegram group, and WhatsApp groups."
+                },
+                {
+                    "name": "Post to User's Telegram & WhatsApp Groups",
+                    "type": "Telegram Bot API / WhatsApp API",
+                    "description": "Automatically posts job listings to the user's specified Telegram and WhatsApp groups."
+                },
+                {
+                    "name": "Collect Candidate Applications",
+                    "type": "Google Forms / Email Parser",
+                    "description": "Captures candidate applications via Google Forms or email submissions."
+                },
+                {
+                    "name": "Analyze Candidate Responses",
+                    "type": "AI Integration (ChatGPT / Claude)",
+                    "description": "Processes candidate details and sends an automated follow-up questionnaire for deeper profiling."
+                },
+                {
+                    "name": "Generate Professional Review & Resume Analysis",
+                    "type": "AI Integration (ChatGPT / Claude)",
+                    "description": "Analyzes resumes and writes a professional candidate evaluation report."
+                },
+                {
+                    "name": "Send Candidate Review to Hiring Manager",
+                    "type": "Email / Slack / WhatsApp API",
+                    "description": "Sends the candidate report and resume to the hiring manager."
+                },
+                {
+                    "name": "Receive Manager's Feedback",
+                    "type": "Google Forms / Email / WhatsApp API",
+                    "description": "Collects feedback from the hiring manager regarding the candidate."
+                },
+                {
+                    "name": "Interview Scheduling & Candidate Notification",
+                    "type": "Email / WhatsApp API",
+                    "description": "Schedules interviews and confirms candidate attendance via email or WhatsApp."
+                },
+                {
+                    "name": "Candidate Tracking Dashboard",
+                    "type": "Google Sheets / Airtable",
+                    "description": "Creates a dashboard to track candidates and their hiring statuses."
+                }
+            ]
+        }
+    ]
+}
